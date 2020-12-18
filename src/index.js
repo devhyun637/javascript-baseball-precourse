@@ -1,13 +1,16 @@
-export default function BaseballGame() {
-  this.play = function (computerInputNumbers, userInputNumbers) {
-    return "결과 값 String";
-  };
+import ComputerNumber from './models/ComputerNumber.js';
+
+const tag = `[BaseballGame]`;
+export default class BaseballGame {
+  init() {
+    console.log(`${tag} init`);
+    this.computerInputNumber = new ComputerNumber().getComputerNumber();
+    console.log(this.computerInputNumber);
+  }
+
+  play(computerInputNumber, userInputNumbers) {
+    return '결과 값 String';
+  }
 }
 
-// export default class BaseballGame {
-//   play(computerInputNumbers, userInputNumbers) {
-//     return "결과 값 String";
-//   }
-// }
-
-new BaseballGame();
+new BaseballGame().init();
